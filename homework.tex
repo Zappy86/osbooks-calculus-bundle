@@ -1,0 +1,74 @@
+% Compile with: pdflatex --shell-escape homework.tex (run it twice).
+
+\documentclass[12pt, twoside]{article}
+\usepackage{amsmath}
+\usepackage{geometry}
+\usepackage{enumitem}
+\usepackage{graphicx}
+
+\geometry{margin=1in}
+
+\makeatletter
+\renewcommand{\maketitle}{%
+  \begin{center}
+    {\LARGE\textbf{\@title}}\\[0.4em]
+  \end{center}
+  \vspace{-0.5em}
+}
+\makeatother
+
+\newcommand{\webimage}[2]{%
+  \immediate\write18{curl -L -o #1.jpg "#2"}%
+  \includegraphics[width=0.45\textwidth]{#1.jpg}%
+}
+
+\title{Homework: Section 5.3 --- Double Integrals in Polar Coordinates\\[0.3em]
+{\large\textit{Calculus Volume 3} (OpenStax)}}
+
+\begin{document}
+
+\maketitle
+
+\noindent\textbf{Instructions:} Complete the following exercises from Section~5.3 of
+\textit{Calculus Volume 3} by OpenStax (Strang \& Herman). Odd exercises 123--143.\\[0.3em]
+\noindent\textit{Source: OpenStax repository source,} \texttt{Zappy86/osbooks-calculus-bundle}\textit{, Section~5.3.}
+
+\bigskip
+
+\begin{enumerate}[leftmargin=*, itemsep=1.5em]
+
+\item[\textbf{123.}] $D$ is the region between the circles of radius $4$ and radius $5$ centered at the origin that lies in the second quadrant.
+
+\item[\textbf{125.}] $D$ is the region bounded by the $x$-axis and $y = \sqrt{2 - x^2}$.
+
+\item[\textbf{127.}] $D = \{(x,y) \mid x^2 + y^2 \leq 4y\}$.
+
+\item[\textbf{129.}]
+\begin{center}
+  \webimage{fig129}{https://raw.githubusercontent.com/Zappy86/osbooks-calculus-bundle/main/media/CNX_Calc_Figure_15_03_202.jpg}
+\end{center}
+
+\item[\textbf{131.}]
+\begin{center}
+  \webimage{fig131}{https://raw.githubusercontent.com/Zappy86/osbooks-calculus-bundle/main/media/CNX_Calc_Figure_15_03_204.jpg}
+\end{center}
+
+\item[\textbf{133.}] In the following graph, the region $D$ is bounded by $y=x$ and $y=x^2$.
+\begin{center}
+  \webimage{fig133}{https://raw.githubusercontent.com/Zappy86/osbooks-calculus-bundle/main/media/CNX_Calc_Figure_15_03_206.jpg}
+\end{center}
+
+\item[\textbf{135.}] $f(x,y)=x+y$, $D=\{(r,\theta)\mid 3\le r\le 5,\; 0\le \theta\le 2\pi\}$.
+
+\item[\textbf{137.}] $f(x,y)=x^4+y^4$, $D=\{(r,\theta)\mid 1\le r\le 2,\; \tfrac{3\pi}{2}\le \theta\le 2\pi\}$.
+
+\item[\textbf{139.}] $f(x,y)=x^4+2x^2y^2+y^4$, where $D=\{(r,\theta)\mid 3\le r\le 4,\; \tfrac{\pi}{3}\le \theta\le \tfrac{2\pi}{3}\}$.
+
+\item[\textbf{141.}] $f(x,y)=\arctan\!\left(\frac{y}{x}\right)$, where $D=\{(r,\theta)\mid 2\le r\le 3,\; \tfrac{\pi}{4}\le \theta\le \tfrac{\pi}{3}\}$.
+
+\item[\textbf{143.}] $\displaystyle \iint_D \big(e^{x^2+y^2}+x^4+2x^2y^2+y^4\big)\arctan\!\left(\frac{y}{x}\right)\,dA$, 
+$D=\{(r,\theta)\mid 1\le r\le 2,\; \tfrac{\pi}{4}\le \theta\le \tfrac{\pi}{3}\}$.
+
+\end{enumerate}
+
+\end{document}
