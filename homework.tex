@@ -22,7 +22,7 @@
   \includegraphics[width=0.45\textwidth]{#1.jpg}%
 }
 
-\title{Homework: Sections 5.4--5.5 --- Triple Integrals\\[0.3em]
+\title{Homework: Sections 6.1--6.2 --- Vector Fields \& Line Integrals\\[0.3em]
 {\large\textit{Calculus Volume 3} (OpenStax)}}
 
 \begin{document}
@@ -30,78 +30,66 @@
 \maketitle
 
 % ============================================================
-\section*{Section~5.4 --- Triple Integrals}
+\section*{Section~6.1 --- Vector Fields}
 % ============================================================
 
-\noindent\textbf{Instructions:} Complete the following exercises from Section~5.4 of
-\textit{Calculus Volume 3} by OpenStax (Strang \& Herman). Odd exercises 181--195, and
-exercise 211.\\[0.3em]
-\noindent\textit{Source: OpenStax repository source,} \texttt{Zappy86/osbooks-calculus-bundle}\textit{, Section~5.4.}
+\noindent\textbf{Instructions:} Complete the following exercises from Section~6.1 of
+\textit{Calculus Volume 3} by OpenStax (Strang \& Herman). Exercises 2--5, 9, 17, 23, 32--34.\\[0.3em]
+\noindent\textit{Source: OpenStax repository source,} \texttt{Zappy86/osbooks-calculus-bundle}\textit{, Section~6.1.}
 
 \bigskip
 
 \begin{enumerate}[leftmargin=*, itemsep=1.5em]
 
-\item[\textbf{181.}]
-Evaluate $\displaystyle\iiint_{B}(2x+3y^{2}+4z^{3})\,dV$, where
-\[
-  B=\{(x,y,z)\mid 0\le x\le 1,\;0\le y\le 2,\;0\le z\le 3\}.
-\]
+\item[]\textit{For exercises 2--4, determine whether the statement is \textbf{true or false}.}
 
-\item[\textbf{183.}]
-Evaluate $\displaystyle\iiint_{B}(x\cos y+z)\,dV$, where
-\[
-  B=\{(x,y,z)\mid 0\le x\le 1,\;0\le y\le\pi,\;-1\le z\le 1\}.
-\]
+\item[\textbf{2.}]
+Vector field $\mathbf{F} = \langle 3x^2,\,1\rangle$ is a gradient field for both
+$\phi_1(x,y) = x^3 + y$ and $\phi_2(x,y) = y + x^3 + 100$.
 
-\item[\textbf{185.}]
-Change the order of integration by integrating first with respect to $z$, then $x$,
-then $y$:
-\[
-  \int_{0}^{1}\int_{1}^{2}\int_{2}^{3}(x^{2}+\ln y+z)\,dx\,dy\,dz.
-\]
+\item[\textbf{3.}]
+Vector field $\mathbf{F} = \dfrac{\langle y,\,x\rangle}{\sqrt{x^2+y^2}}$ is constant
+in direction and magnitude on a unit circle.
 
-\item[\textbf{187.}]
-Change the order of integration by integrating first with respect to $z$, then $x$,
-then $y$:
-\[
-  \int_{-1}^{2}\int_{1}^{3}\int_{0}^{4}\!\left(x^{2}z+\frac{1}{y}\right)dx\,dy\,dz.
-\]
+\item[\textbf{4.}]
+Vector field $\mathbf{F} = \dfrac{\langle y,\,x\rangle}{\sqrt{x^2+y^2}}$ is neither a
+radial field nor a rotation.
 
-\item[\textbf{189.}]
-Let $F$, $G$, and $H$ be continuous functions on $[a,b]$, $[c,d]$, and $[e,f]$,
-respectively, where $a,b,c,d,e,f$ are real numbers such that $a<b$, $c<d$, and
-$e<f$. Show that
-\[
-  \int_{a}^{b}\int_{c}^{d}\int_{e}^{f}F(x)\,G(y)\,H(z)\,dz\,dy\,dx
-  =\left(\int_{a}^{b}F(x)\,dx\right)\!\left(\int_{c}^{d}G(y)\,dy\right)\!\left(\int_{e}^{f}H(z)\,dz\right).
-\]
+\item[]\textit{For exercises 5 and 9, describe each vector field by drawing some of its vectors.}
 
-\item[\textbf{191.}]
-Evaluate $\displaystyle\iiint_{E}(2x+5y+7z)\,dV$, where
-\[
-  E=\{(x,y,z)\mid 0\le x\le 1,\;0\le y\le -x+1,\;1\le z\le 2\}.
-\]
+\item[\textbf{5.}]
+\textbf{[T]}\quad $\mathbf{F}(x,y) = x\,\mathbf{i} + y\,\mathbf{j}$
 
-\item[\textbf{193.}]
-Evaluate $\displaystyle\iiint_{E}(\sin x+\sin y)\,dV$, where
-\[
-  E=\!\left\{(x,y,z)\;\middle|\;0\le x\le\frac{\pi}{2},\;
-    {-\cos x}\le y\le\cos x,\;-1\le z\le 1\right\}.
-\]
+\item[\textbf{9.}]
+\textbf{[T]}\quad $\mathbf{F}(x,y) = 2x\,\mathbf{i} + 3y\,\mathbf{j}$
 
-\item[\textbf{195.}]
-Evaluate $\displaystyle\iiint_{E}(x+2yz)\,dV$, where
-\[
-  E=\{(x,y,z)\mid 0\le x\le 1,\;0\le y\le x,\;0\le z\le 5-x-y\}.
-\]
+\item[]\textit{For exercise 17, find the gradient vector field of the function $f$.}
 
-\item[\textbf{211.}]
-The solid $E$ bounded by $y^{2}+z^{2}=9$, $z=0$, $x=0$, and $x=5$ is shown in the
-following figure. Evaluate the integral $\displaystyle\iiint_{E}z\,dV$ by integrating
-first with respect to $z$, then $y$, and then $x$.
+\item[\textbf{17.}]
+$f(x,y,z) = x^2y + xy + y^2z$
+
+\item[]\textit{For exercise 23, write a formula for the vector field with the given property.}
+
+\item[\textbf{23.}]
+All vectors point toward the origin and have constant length.
+
+\item[]\textit{For exercises 32--34, let $\mathbf{F} = x\,\mathbf{i} + y\,\mathbf{j}$,
+$\mathbf{G} = -y\,\mathbf{i} + x\,\mathbf{j}$, and $\mathbf{H} = x\,\mathbf{i} - y\,\mathbf{j}$.
+Match $\mathbf{F}$, $\mathbf{G}$, and $\mathbf{H}$ with their graphs.}
+
+\item[\textbf{32.}]
 \begin{center}
-  \webimage{fig211}{https://raw.githubusercontent.com/Zappy86/osbooks-calculus-bundle/main/media/CNX_Calc_Figure_15_04_201.jpg}
+  \webimage{fig32}{https://raw.githubusercontent.com/Zappy86/osbooks-calculus-bundle/main/media/CNX_Calc_Figure_16_01_212.jpg}
+\end{center}
+
+\item[\textbf{33.}]
+\begin{center}
+  \webimage{fig33}{https://raw.githubusercontent.com/Zappy86/osbooks-calculus-bundle/main/media/CNX_Calc_Figure_16_01_213.jpg}
+\end{center}
+
+\item[\textbf{34.}]
+\begin{center}
+  \webimage{fig34}{https://raw.githubusercontent.com/Zappy86/osbooks-calculus-bundle/main/media/CNX_Calc_Figure_16_01_214.jpg}
 \end{center}
 
 \end{enumerate}
@@ -109,96 +97,74 @@ first with respect to $z$, then $y$, and then $x$.
 \bigskip
 
 % ============================================================
-\section*{Section~5.5 --- Triple Integrals in Cylindrical and Spherical Coordinates}
+\section*{Section~6.2 --- Line Integrals}
 % ============================================================
 
-\noindent\textbf{Instructions:} Complete the following exercises from Section~5.5 of
-\textit{Calculus Volume 3} by OpenStax (Strang \& Herman). Exercises 241, 245, 253,
-255, 269, 277.\\[0.3em]
-\noindent\textit{Source: OpenStax repository source,} \texttt{Zappy86/osbooks-calculus-bundle}\textit{, Section~5.5.}
+\noindent\textbf{Instructions:} Complete the following exercises from Section~6.2 of
+\textit{Calculus Volume 3} by OpenStax (Strang \& Herman). Exercises 39--43, 51, 54,
+57, 62, 67.\\[0.3em]
+\noindent\textit{Source: OpenStax repository source,} \texttt{Zappy86/osbooks-calculus-bundle}\textit{, Section~6.2.}
 
 \bigskip
 
 \begin{enumerate}[leftmargin=*, itemsep=1.5em]
 
-\item[\textbf{241.}]
-Evaluate the triple integral $\displaystyle\iiint_{B}f(x,y,z)\,dV$ over the solid $B$.
+\item[]\textit{For exercises 39--43, determine whether the statement is \textbf{true or false}.}
 
-\smallskip
-$f(x,y,z)=z$,
+\item[\textbf{39.}]
+\textit{True or False?}\enspace Line integral $\displaystyle\int_C f(x,y)\,ds$ is equal to a
+definite integral if $C$ is a smooth curve defined on $[a,b]$ and if function $f$ is
+continuous on some region that contains curve $C$.
+
+\item[\textbf{40.}]
+\textit{True or False?}\enspace Vector functions $\mathbf{r}_1 = t\,\mathbf{i} + t^2\,\mathbf{j}$,
+$0\le t\le 1$, and $\mathbf{r}_2 = (1-t)\,\mathbf{i} + (1-t)^2\,\mathbf{j}$, $0\le t\le 1$,
+define the same oriented curve.
+
+\item[\textbf{41.}]
+\textit{True or False?}\enspace
+$\displaystyle\int_{-C}(P\,dx+Q\,dy) = \int_C(P\,dx-Q\,dy)$
+
+\item[\textbf{42.}]
+\textit{True or False?}\enspace A piecewise smooth curve $C$ consists of a finite number of
+smooth curves that are joined together end to end.
+
+\item[\textbf{43.}]
+\textit{True or False?}\enspace If $C$ is given by $x(t)=t$, $y(t)=t$, $0\le t\le 1$, then
 \[
-  B=\{(x,y,z)\mid x^{2}+y^{2}\le 9,\;x\ge 0,\;y\ge 0,\;0\le z\le 1\}.
-\]
-\begin{center}
-  \webimage{fig241}{https://raw.githubusercontent.com/Zappy86/osbooks-calculus-bundle/main/media/CNX_Calc_Figure_15_05_201.jpg}
-\end{center}
-
-\item[\textbf{245.}]
-Evaluate the triple integral $\displaystyle\iiint_{B}f(x,y,z)\,dV$ over the solid $B$.
-
-\smallskip
-$f(x,y,z)=e^{\sqrt{x^{2}+y^{2}}}$,
-\[
-  B=\{(x,y,z)\mid 1\le x^{2}+y^{2}\le 4,\;y\le 0,\;x\le y\sqrt{3},\;2\le z\le 3\}.
-\]
-
-\item[\textbf{253.}]
-The function $g$ and region $E$ are given in rectangular coordinates.
-\begin{enumerate}[label=(\alph*)]
-  \item Express the region $E$ and the function $g$ in cylindrical coordinates.
-        Let $f(r,\theta,z)$ be the corresponding function in cylindrical coordinates.
-  \item Convert the integral $\displaystyle\iiint_{E}g(x,y,z)\,dV$ to cylindrical
-        coordinates and evaluate it.
-\end{enumerate}
-
-\smallskip
-$g(x,y,z)=\dfrac{1}{x+3}$,
-\[
-  E=\{(x,y,z)\mid 0\le x^{2}+y^{2}\le 9,\;x\ge 0,\;y\ge 0,\;0\le z\le x+3\}.
+  \int_C xy\,ds = \int_0^1 t^2\,dt.
 \]
 
-\item[\textbf{255.}]
-The function $g$ and region $E$ are given in rectangular coordinates.
-\begin{enumerate}[label=(\alph*)]
-  \item Express the region $E$ and the function $g$ in cylindrical coordinates.
-        Let $f(r,\theta,z)$ be the corresponding function in cylindrical coordinates.
-  \item Convert the integral $\displaystyle\iiint_{E}g(x,y,z)\,dV$ to cylindrical
-        coordinates and evaluate it.
-\end{enumerate}
+\item[\textbf{51.}]
+Find the work done by force field
+$\mathbf{F}(x,y,z) = -\dfrac{1}{2}x\,\mathbf{i} - \dfrac{1}{2}y\,\mathbf{j} + \dfrac{1}{4}\,\mathbf{k}$
+on a particle as it moves along the helix
+$\mathbf{r}(t) = \cos t\,\mathbf{i} + \sin t\,\mathbf{j} + t\,\mathbf{k}$
+from point $(1,0,0)$ to point $(-1,0,3\pi)$.
+
+\item[\textbf{54.}]
+Find the mass of a wire in the shape of a circle of radius~$2$ centered at $(3,4)$
+with linear mass density $\rho(x,y)=y^2$.
+
+\item[]\textit{For exercises 57 and 62, evaluate the line integral.}
+
+\item[\textbf{57.}]
+Evaluate $\displaystyle\int_C yz\,dx + xz\,dy + xy\,dz$ over the line segment from
+$(1,1,1)$ to $(3,2,0)$.
+
+\item[\textbf{62.}]
+Evaluate line integral $\displaystyle\int_C (2x-y)\,dx + (x+3y)\,dy$, where $C$ lies
+along the $x$-axis from $x=0$ to $x=5$.
+
+\item[]\textit{For exercise 67, find the work done by force field $\mathbf{F}$ on an object
+moving along the indicated path.}
+
+\item[\textbf{67.}]
+$\mathbf{F}(x,y,z) = x\,\mathbf{i} + y\,\mathbf{j} - 5z\,\mathbf{k}$
 
 \smallskip
-$g(x,y,z)=x$,
-\[
-  E=\{(x,y,z)\mid 1\le y^{2}+z^{2}\le 9,\;0\le x\le 9-y^{2}-z^{2}\}.
-\]
-
-\item[\textbf{269.}]
-Evaluate the triple integral $\displaystyle\iiint_{B}f(x,y,z)\,dV$ over the solid $B$.
-
-\smallskip
-$f(x,y,z)=1$,
-\[
-  B=\{(x,y,z)\mid x^{2}+y^{2}+z^{2}\le 90,\;z\ge 0\}.
-\]
-\begin{center}
-  \webimage{fig269}{https://raw.githubusercontent.com/Zappy86/osbooks-calculus-bundle/main/media/CNX_Calc_Figure_15_05_205.jpg}
-\end{center}
-
-\item[\textbf{277.}]
-The function $g$ and region $E$ are given in rectangular coordinates.
-\begin{enumerate}[label=(\alph*)]
-  \item Express the region $E$ and the function $g$ in spherical coordinates.
-        Let $f(\rho,\theta,\varphi)$ be the corresponding function in spherical
-        coordinates.
-  \item Convert the integral $\displaystyle\iiint_{E}g(x,y,z)\,dV$ to spherical
-        coordinates and evaluate it.
-\end{enumerate}
-
-\smallskip
-$g(x,y,z)=x+y$;
-\[
-  E=\{(x,y,z)\mid 1\le x^{2}+y^{2}+z^{2}\le 4,\;z\ge 0,\;y\ge 0\}.
-\]
+$C\colon\;\mathbf{r}(t) = 2\cos t\,\mathbf{i} + 2\sin t\,\mathbf{j} + t\,\mathbf{k},
+\quad 0\le t\le 2\pi$
 
 \end{enumerate}
 
