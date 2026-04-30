@@ -57,8 +57,9 @@ If `X` or `Y` is out of range, STOP with a failure report.
 4. Number exercises using `section_start` as the offset: first exercise in `section-exercises` = `section_start`, second = `section_start + 1`, etc.
 5. Resolve the final exercise set from the `exercises` input by evaluating each sub-expression and taking the union, deduplicated and sorted.
 6. Include exactly those exercises, no more, no less.
-7. Convert math markup faithfully into LaTeX.
-8. For exercises containing figures/images:
+7. For each group of consecutive assigned exercises that share the same CNXML instruction `<para>` immediately preceding them in `section-exercises`, emit a `\item[]\textit{...}` line before the first exercise in that group. Use the exact text of that `<para>` but scope it to only the assigned exercises from the group (e.g. "For exercises 51 and 54, find the work done." becomes two separate lines if the exercises require different instructions). Do **not** emit an instruction line whose text does not accurately describe the exercises that follow it — give each logically distinct exercise or sub-group its own instruction line.
+8. Convert math markup faithfully into LaTeX.
+9. For exercises containing figures/images:
    - resolve asset paths from the module/repo
    - output raw GitHub URLs
    - insert figures using `\webimage{figN}{IMAGE_URL}` format from template comments
@@ -144,6 +145,10 @@ Do not change the preamble, title formatting, macro definitions, or list formatt
 \begin{enumerate}[leftmargin=*, itemsep=1.5em]
 
 % [INSERT EXERCISES HERE]
+% - Before each group of exercises sharing the same source instruction para, emit:
+%     \item[]\textit{For exercise(s) N (and M), <instruction text>.}
+%   Scope the instruction to only the assigned exercises in that group. If exercises
+%   in the same source group require different descriptions, give each its own line.
 % - Use \item[\textbf{N.}] for each exercise
 % - Typeset all math in LaTeX
 % - For exercises with figures, use:
