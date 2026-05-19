@@ -1,0 +1,343 @@
+% Compile with: pdflatex vector_calculus_study_sheet_ch6_0_to_6_5.tex (run it twice).
+
+\documentclass[12pt, twoside]{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{geometry}
+\usepackage{enumitem}
+\usepackage{graphicx}
+
+\geometry{margin=1in}
+
+\makeatletter
+\renewcommand{\maketitle}{%
+  \begin{center}
+    {\LARGE\textbf{\@title}}\\[0.4em]
+  \end{center}
+  \vspace{-0.5em}
+}
+\makeatother
+
+\title{Study Sheet: Vector Calculus (Chapter 6.0--6.5)\\[0.3em]
+{\large\textit{Calculus Volume 3} (OpenStax)}}
+
+\begin{document}
+
+\maketitle
+
+\noindent\textbf{Scope:} Sections 6.0 through 6.5 only (Introduction, Vector Fields, Line Integrals, Conservative Vector Fields, Green's Theorem, Divergence and Curl).
+
+\bigskip
+
+\section*{1) Core formulas you need}
+
+\subsection*{6.0 Introduction (no heavy formulas)}
+\begin{itemize}[leftmargin=*]
+  \item Big ideas: vector fields, line integrals, work, circulation, flux, and higher-dimensional FTC ideas.
+\end{itemize}
+
+\subsection*{6.1 Vector Fields}
+\begin{align*}
+\mathbf{F}(x,y) &= \langle P(x,y),Q(x,y)\rangle = P\,\mathbf{i}+Q\,\mathbf{j},\\
+\mathbf{F}(x,y,z) &= \langle P(x,y,z),Q(x,y,z),R(x,y,z)\rangle.
+\end{align*}
+Conservative (gradient) field:
+\[
+\mathbf{F}=\nabla f\quad\text{for some potential }f.
+\]
+
+\subsection*{6.2 Line Integrals}
+Curve: $\mathbf{r}(t)=\langle x(t),y(t),z(t)\rangle$, $a\le t\le b$.
+\[
+\|\mathbf{r}'(t)\|=\sqrt{(x')^2+(y')^2+(z')^2},\qquad ds=\|\mathbf{r}'(t)\|dt.
+\]
+Scalar line integral:
+\[
+\int_C f\,ds=\int_a^b f(\mathbf{r}(t))\,\|\mathbf{r}'(t)\|\,dt.
+\]
+Vector line integral / work:
+\[
+\int_C \mathbf{F}\cdot d\mathbf{r}=\int_C \mathbf{F}\cdot \mathbf{T}\,ds
+=\int_a^b \mathbf{F}(\mathbf{r}(t))\cdot \mathbf{r}'(t)\,dt.
+\]
+Equivalent differential form:
+\[
+\int_C \mathbf{F}\cdot d\mathbf{r}=\int_C P\,dx+Q\,dy+R\,dz.
+\]
+Orientation reversal:
+\[
+\int_{-C}\mathbf{F}\cdot d\mathbf{r}=-\int_C\mathbf{F}\cdot d\mathbf{r}.
+\]
+Flux across plane curve $C$:
+\[
+\int_C \mathbf{F}\cdot \mathbf{N}\,ds
+=\int_a^b \mathbf{F}(\mathbf{r}(t))\cdot\mathbf{n}(t)\,dt,
+\quad \mathbf{n}(t)=\langle y'(t),-x'(t)\rangle.
+\]
+
+\subsection*{6.3 Conservative Vector Fields}
+Fundamental Theorem for Line Integrals (FTLI):
+\[
+\int_C \nabla f\cdot d\mathbf{r}=f(\mathbf{r}(b))-f(\mathbf{r}(a)).
+\]
+Cross-partial conservative tests on open simply connected domains:
+\[
+\mathbf{F}=\langle P,Q\rangle\text{ conservative }\Longleftrightarrow P_y=Q_x,
+\]
+\[
+\mathbf{F}=\langle P,Q,R\rangle\text{ conservative }\Longleftrightarrow
+P_y=Q_x,\;P_z=R_x,\;Q_z=R_y.
+\]
+
+\subsection*{6.4 Green's Theorem}
+(Positive orientation = counterclockwise.)
+\[
+\oint_C P\,dx+Q\,dy=\iint_D\left(Q_x-P_y\right)dA
+\quad\text{(circulation/tangential form)}
+\]
+\[
+\oint_C \mathbf{F}\cdot\mathbf{N}\,ds=\iint_D\left(P_x+Q_y\right)dA
+\quad\text{(flux/normal form)}
+\]
+Also: $\oint_C \mathbf{F}\cdot\mathbf{N}\,ds=\oint_C(-Q\,dx+P\,dy)$.
+
+\subsection*{6.5 Divergence and Curl}
+Divergence:
+\[
+\operatorname{div}\mathbf{F}=\nabla\cdot\mathbf{F}
+=\begin{cases}
+P_x+Q_y,&\mathbf{F}=\langle P,Q\rangle\\
+P_x+Q_y+R_z,&\mathbf{F}=\langle P,Q,R\rangle
+\end{cases}
+\]
+Curl:
+\[
+\operatorname{curl}\mathbf{F}=\nabla\times\mathbf{F}
+=\left\langle R_y-Q_z,\;P_z-R_x,\;Q_x-P_y\right\rangle
+\quad (\mathbb{R}^3),
+\]
+\[
+\operatorname{curl}\mathbf{F}=(Q_x-P_y)\mathbf{k}
+\quad (\mathbb{R}^2).
+\]
+Useful fact (with standard smoothness + simply connected domain conditions):
+\[
+\mathbf{F}\text{ conservative }\Longleftrightarrow \operatorname{curl}\mathbf{F}=\mathbf{0}.
+\]
+
+\section*{2) Worked examples by problem type}
+
+\begin{enumerate}[leftmargin=*, itemsep=1em]
+\item \textbf{Vector field evaluation at a point (6.1)}
+
+Given $\mathbf{F}(x,y)=\langle 2y^2+x-4,\cos x\rangle$, find $\mathbf{F}(0,-1)$.
+\[
+\mathbf{F}(0,-1)=\langle 2(1)+0-4,\cos 0\rangle=\langle -2,1\rangle.
+\]
+
+\item \textbf{Scalar line integral (6.2)}
+
+Evaluate $\int_C (x+y)\,ds$ on $\mathbf{r}(t)=\langle t,t\rangle$, $0\le t\le 1$.
+\[
+f(\mathbf{r}(t))=2t,\quad \|\mathbf{r}'(t)\|=\sqrt{2}.
+\]
+\[
+\int_C (x+y)\,ds=\int_0^1 2t\sqrt{2}\,dt=\sqrt{2}.
+\]
+
+\item \textbf{Vector line integral / work (6.2)}
+
+For $\mathbf{F}=\langle -y,x\rangle$, $\mathbf{r}(t)=\langle\cos t,\sin t\rangle$, $0\le t\le\pi$:
+\[
+\mathbf{F}(\mathbf{r}(t))=\langle-\sin t,\cos t\rangle,
+\quad \mathbf{r}'(t)=\langle-\sin t,\cos t\rangle.
+\]
+\[
+\int_C\mathbf{F}\cdot d\mathbf{r}=\int_0^{\pi}1\,dt=\pi.
+\]
+
+\item \textbf{Use FTLI (6.3)}
+
+Evaluate $\int_C \nabla f\cdot d\mathbf{r}$ where $f(x,y)=x^2+2y^2$,
+from $(0,0)$ to $(2,2)$.
+\[
+\int_C\nabla f\cdot d\mathbf{r}=f(2,2)-f(0,0)=(4+8)-0=12.
+\]
+
+\item \textbf{Find potential function (6.3)}
+
+For $\mathbf{F}=\langle 2xy^3,\;3x^2y^2+\cos y\rangle$, find $f$ with $\nabla f=\mathbf{F}$.
+\[
+f_x=2xy^3\Rightarrow f=x^2y^3+h(y).
+\]
+Then
+\[
+f_y=3x^2y^2+h'(y)=3x^2y^2+\cos y\Rightarrow h'(y)=\cos y\Rightarrow h(y)=\sin y.
+\]
+So one potential is
+\[
+f(x,y)=x^2y^3+\sin y.
+\]
+
+\item \textbf{Conservative test with domain check (6.3)}
+
+$\mathbf{F}(x,y)=\left\langle x\ln y,\frac{x^2}{2y}\right\rangle$ on $y>0$.
+\[
+P_y=\frac{x}{y},\quad Q_x=\frac{x}{y}\Rightarrow P_y=Q_x.
+\]
+Domain $y>0$ is open and simply connected, so $\mathbf{F}$ is conservative.
+
+\item \textbf{Green's theorem: circulation form (6.4)}
+
+For $\mathbf{F}=\langle -y,x\rangle$ and $C$ the unit circle (CCW):
+\[
+\oint_C P\,dx+Q\,dy=\iint_D(Q_x-P_y)\,dA
+=\iint_D(1-(-1))\,dA=2\,\text{Area}(D)=2\pi.
+\]
+
+\item \textbf{Green's theorem: flux form (6.4)}
+
+For $\mathbf{F}=\langle x,y\rangle$ and $C$ circle radius $r$ (CCW):
+\[
+\oint_C\mathbf{F}\cdot\mathbf{N}\,ds
+=\iint_D(P_x+Q_y)\,dA
+=\iint_D 2\,dA=2\pi r^2.
+\]
+
+\item \textbf{Divergence and curl (6.5)}
+
+Let $\mathbf{F}(x,y,z)=\langle e^x,yz,-yz^2\rangle$.
+\[
+\operatorname{div}\mathbf{F}=\frac{\partial}{\partial x}(e^x)+\frac{\partial}{\partial y}(yz)+\frac{\partial}{\partial z}(-yz^2)
+=e^x+z-2yz.
+\]
+At $(0,2,-1)$:
+\[
+\operatorname{div}\mathbf{F}=1-1+4=4.
+\]
+\end{enumerate}
+
+\section*{3) Practice problems with full solutions}
+
+\subsection*{Problem A (scalar line integral)}
+Evaluate $\int_C (x^2+y^2)\,ds$ for $\mathbf{r}(t)=\langle\cos t,\sin t\rangle$, $0\le t\le\pi$.
+
+\textbf{Solution:}
+\[
+f(\mathbf{r}(t))=\cos^2 t+\sin^2 t=1,\quad \|\mathbf{r}'(t)\|=1.
+\]
+\[
+\int_C (x^2+y^2)\,ds=\int_0^{\pi}1\cdot 1\,dt=\pi.
+\]
+
+\subsection*{Problem B (vector line integral/work)}
+Evaluate $\int_C \mathbf{F}\cdot d\mathbf{r}$ for $\mathbf{F}=\langle x,y\rangle$ and
+$\mathbf{r}(t)=\langle t,t^2\rangle$, $0\le t\le 1$.
+
+\textbf{Solution:}
+\[
+\mathbf{F}(\mathbf{r}(t))=\langle t,t^2\rangle,
+\quad \mathbf{r}'(t)=\langle 1,2t\rangle.
+\]
+\[
+\mathbf{F}(\mathbf{r}(t))\cdot\mathbf{r}'(t)=t+2t^3.
+\]
+\[
+\int_C\mathbf{F}\cdot d\mathbf{r}=\int_0^1 (t+2t^3)dt
+=\left[\frac{t^2}{2}+\frac{t^4}{2}\right]_0^1=1.
+\]
+
+\subsection*{Problem C (FTLI)}
+Let $f(x,y,z)=x^2y+z^2$. Evaluate $\int_C\nabla f\cdot d\mathbf{r}$ from $(1,1,0)$ to $(2,3,1)$.
+
+\textbf{Solution:}
+\[
+\int_C\nabla f\cdot d\mathbf{r}=f(2,3,1)-f(1,1,0)
+=(4\cdot 3+1)-(1\cdot 1+0)=13-1=12.
+\]
+
+\subsection*{Problem D (conservative test in 2D)}
+Determine whether $\mathbf{F}(x,y)=\langle 2xy, x^2+1\rangle$ is conservative on $\mathbb{R}^2$.
+
+\textbf{Solution:}
+\[
+P_y=2x,\qquad Q_x=2x \Rightarrow P_y=Q_x.
+\]
+Domain $\mathbb{R}^2$ is open and simply connected, so $\mathbf{F}$ is conservative.
+A potential function:
+\[
+f_x=2xy\Rightarrow f=x^2y+h(y),\quad f_y=x^2+h'(y)=x^2+1\Rightarrow h'(y)=1.
+\]
+So one choice is $f(x,y)=x^2y+y$.
+
+\subsection*{Problem E (Green circulation)}
+Compute $\oint_C(-y\,dx+x\,dy)$ where $C$ is the triangle with vertices $(0,0),(1,0),(0,1)$ oriented counterclockwise.
+
+\textbf{Solution:}
+\[
+P=-y,\quad Q=x\Rightarrow Q_x-P_y=1-(-1)=2.
+\]
+Region area is $\frac12$, so
+\[
+\oint_C P\,dx+Q\,dy=\iint_D 2\,dA=2\cdot\frac12=1.
+\]
+
+\subsection*{Problem F (Green flux)}
+Compute $\oint_C\mathbf{F}\cdot\mathbf{N}\,ds$ for $\mathbf{F}=\langle x,2y\rangle$ on the circle $x^2+y^2=4$ (CCW).
+
+\textbf{Solution:}
+\[
+P_x+Q_y=1+2=3,
+\quad \text{Area}(D)=\pi(2)^2=4\pi.
+\]
+\[
+\oint_C\mathbf{F}\cdot\mathbf{N}\,ds=\iint_D 3\,dA=3(4\pi)=12\pi.
+\]
+
+\subsection*{Problem G (divergence + curl in 2D)}
+For $\mathbf{F}(x,y)=\langle x^2y,\,y-x y^2\rangle$, find $\operatorname{div}\mathbf{F}$ and $\operatorname{curl}\mathbf{F}$.
+
+\textbf{Solution:}
+\[
+\operatorname{div}\mathbf{F}=P_x+Q_y=2xy+(1-2xy)=1.
+\]
+\[
+\operatorname{curl}\mathbf{F}=(Q_x-P_y)\mathbf{k}=(-y^2-x^2)\mathbf{k}.
+\]
+
+\section*{4) Step-by-step workflow for vector calculus problems (through 6.5)}
+
+\begin{enumerate}[leftmargin=*, itemsep=0.6em]
+  \item \textbf{Classify the problem first:}
+  vector field eval/sketch, scalar line integral, vector line integral/work, conservative test, FTLI, Green circulation/flux, divergence/curl.
+
+  \item \textbf{Set up geometry and orientation:}
+  identify curve/surface region, parameterization, endpoints, and orientation (especially for vector line integrals and Green's theorem).
+
+  \item \textbf{Choose the fastest theorem:}
+  \begin{itemize}[leftmargin=*]
+    \item If integrand is $\nabla f\cdot d\mathbf{r}$, use FTLI.
+    \item If closed plane curve and suitable region: try Green's theorem.
+    \item If simple direct parameterization is clean: integrate in $t$.
+  \end{itemize}
+
+  \item \textbf{Compute core derivatives carefully:}
+  $\mathbf{r}'(t)$, $\|\mathbf{r}'(t)\|$, partials $P_x,P_y,Q_x,Q_y,\dots$.
+
+  \item \textbf{For conservative checks:}
+  verify cross-partials \emph{and} check domain is open/simply connected before concluding conservative.
+
+  \item \textbf{For line integrals:}
+  convert everything to one variable $t$ and integrate on correct bounds.
+
+  \item \textbf{For Green's theorem:}
+  use counterclockwise orientation convention; if clockwise, insert a minus sign.
+
+  \item \textbf{Interpret sign/units:}
+  negative work, positive/negative flux, zero circulation, etc.
+
+  \item \textbf{Sanity check:}
+  compare with expected symmetry/physical behavior (e.g., conservative closed-loop circulation should be 0).
+\end{enumerate}
+
+\end{document}
